@@ -1,6 +1,7 @@
 # https://collectd.org/wiki/index.php/Plugin:Redis
 class collectd::plugin::redis (
   Enum['present', 'absent']              $ensure         = 'present',
+  Optional[Integer[0]]                   $interval       = undef,
   Optional[Boolean]                      $manage_package = undef,
   Hash[String[1], Collectd::Redis::Node] $nodes          = {
     'redis' => {
